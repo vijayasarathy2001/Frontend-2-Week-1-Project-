@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [
+  { id: 1, name: "john", age: "18", profession: "developer" },
+  { id: 2, name: "jack", age: "20", profession: "developer" },
+  { id: 3, name: "karen", age: "19", profession: "admin" },
+];
+
+// 1. Print Developer by Map
+function PrintDeveloperbyMap() {
+  arr.map((employee) => {
+    if (employee.profession === "developer") {
+      console.log(employee);
+    }
+  });
+}
+
+// 2. Print Developer by ForEach
+function PrintDeveloperbyForEach() {
+  arr.forEach((employee) => {
+    if (employee.profession === "developer") {
+      console.log(employee);
+    }
+  });
+}
+
+// 3. Add Data
+function addData() {
+  const newEmployee = { id: 4, name: "susan", age: "20", profession: "intern" };
+  arr.push(newEmployee);
+  console.log(arr);
+}
+
+// 4. Remove Admin (using .filter() as specified in the marking scheme)
+function removeAdmin() {
+  arr = arr.filter((employee) => employee.profession !== "admin");
+  console.log(arr);
+}
+
+// 5. Concatinate Array
+function ConcatinateArray() {
+  const newArray = [
+    { id: 5, name: "alex", age: "22", profession: "designer" },
+    { id: 6, name: "emma", age: "24", profession: "manager" },
+    { id: 7, name: "liam", age: "21", profession: "qa" },
+  ];
+
+  const combinedArray = arr.concat(newArray);
+  console.log(combinedArray);
+}
+    </script>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      line-height: 1.6;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+    p {
+      color: #666;
+    }
+    </style>
+<body>
+
+    <h1>Array Operations Demo</h1>
+  <p>Click the buttons below and inspect the browser console to see the output.</p>
+
+  <div class="btn-container">
+    <button onclick="PrintDeveloperbyMap()">Print Developers (Map)</button>
+    <button onclick="PrintDeveloperbyForEach()">Print Developers (ForEach)</button>
+    <button onclick="addData()">Add Data</button>
+    <button onclick="removeAdmin()">Remove Admin</button>
+    <button onclick="ConcatinateArray()">Concatenate Array</button>
+  </div>
+    
+</body>
+</html>
